@@ -21,9 +21,9 @@ RUN pip install -r requirements.txt
 
 # copy project
 COPY . /home/car
-COPY ./entrypoint.sh /home/car/entrypoint.sh
+#COPY ./entrypoint.sh /home/car/entrypoint.sh
 
-RUN ["chmod", "+x", "/home/car/entrypoint.sh"]
+#RUN ["chmod", "+x", "/home/car/entrypoint.sh"]
 
 # run entrypoint.sh
-ENTRYPOINT ["/home/car/entrypoint.sh"]
+#ENTRYPOINT ["/home/car/entrypoint.sh"]
