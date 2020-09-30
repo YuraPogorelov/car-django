@@ -11,3 +11,14 @@ class Color(models.Model):
     class Meta:
         verbose_name = "Цвет"
         verbose_name_plural = "Цвета"
+
+
+class Transmission(models.Model):
+    name = models.CharField("Трансмиссия", max_length=200)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Трасмиссия"
+        verbose_name_plural = "Трансмисии"
