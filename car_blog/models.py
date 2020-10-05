@@ -35,5 +35,16 @@ class Brend(models.Model):
         verbose_name = "Название компании"
         verbose_name_plural = "Название компаний"
 
+
+class Engine(models.Model):
+    name = models.CharField("Тип двигателя", max_length=200)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Тип двигателя"
+        verbose_name_plural = "Типы длигателей"
+
 # class Model(models.Model):
 
