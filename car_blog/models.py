@@ -25,9 +25,10 @@ class Body_type(models.Model):
 
 
 class Brend(models.Model):
+    counter = models.CharField("Страна", max_length=200, null=True)
     name = models.CharField("Название компании", max_length=200)
     logo = models.ImageField(upload_to='image/', max_length=255)
-    tel = models.CharField(max_length=150)
+    tel = models.CharField("Телефон", max_length=150)
 
     def __str__(self):
         return self.name
@@ -47,5 +48,15 @@ class Engine(models.Model):
         verbose_name = "Тип двигателя"
         verbose_name_plural = "Типы длигателей"
 
-# class Model(models.Model):
 
+class Characteristics(models.Model):
+    model = models.ForeignKey(Brend, on_delete=models.CASCADE, null=True, blank=True)
+    transmission = models.ForeignKey(Transmission, on_delete=models.CASCADE, null=True)
+    color = models.CharField("Цвет авто", max_length=200, null=True)
+
+    def __str__(self):
+        return self.model
+
+    class Meta:
+        verbose_name = "Основные характеристики машины"
+        verbose_name_plural = "Основные характеристики машин"
