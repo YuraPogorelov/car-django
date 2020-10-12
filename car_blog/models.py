@@ -25,10 +25,9 @@ class Body_type(models.Model):
 
 
 class Brend(models.Model):
-    county = models.CharField("Страна", max_length=200)
     name = models.CharField("Название компании", max_length=200)
-    image = models.ImageField("Logo", upload_to=None)
-    tel = models.CharField("Телефон", max_length=150)
+    logo = models.ImageField(upload_to='image/', max_length=255)
+    tel = models.CharField(max_length=150)
 
     def __str__(self):
         return self.name
