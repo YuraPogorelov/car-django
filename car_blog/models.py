@@ -26,7 +26,6 @@ class Body_type(models.Model):
 
 class Brend(models.Model):
     name = models.CharField("Название компании", max_length=200)
-    image = models.ImageField(upload_to='logo/', max_length=255, null=True, blank=True)
     tel = models.CharField(max_length=150)
 
     def __str__(self):
