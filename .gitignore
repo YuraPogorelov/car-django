@@ -1,5 +1,7 @@
 .env.dev
 .idea
 .idea/
+.vscode
+.vscode/
 env
 env/
