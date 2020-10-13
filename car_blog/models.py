@@ -27,7 +27,7 @@ class Body_type(models.Model):
 class Brend(models.Model):
     counter = models.CharField("Страна", max_length=200, null=True)
     name = models.CharField("Название компании", max_length=200)
-    logo = models.ImageField(upload_to='logo/', max_length=255)
+    logo = models.ImageField("Логотип компании", upload_to='logo/', max_length=255)
     tel = models.CharField("Телефон", max_length=150)
 
     def __str__(self):
@@ -51,11 +51,11 @@ class Engine(models.Model):
 
 class Characteristics(models.Model):
     model = models.ForeignKey(Brend, verbose_name='Модели', on_delete=models.SET_NULL, null=True, blank=True)
-    image = models.ImageField(upload_to="image/", null=True)
+    image = models.ImageField("Фото", upload_to="image/", null=True)
     color = models.CharField("Цвет авто", max_length=200, null=True)
-    transmission = models.ForeignKey(Transmission, on_delete=models.CASCADE, null=True)
-    body_type = models.ForeignKey(Body_type, on_delete=models.CASCADE, null=True)
-    engine = models.ForeignKey(Engine, on_delete=models.CASCADE, null=True)
+    transmission = models.ForeignKey(Transmission, verbose_name="Тип коробки передач", on_delete=models.CASCADE, null=True)
+    body_type = models.ForeignKey(Body_type, verbose_name="Тип кузова", on_delete=models.CASCADE, null=True)
+    engine = models.ForeignKey(Engine, verbose_name="Тип двигателя", on_delete=models.CASCADE, null=True)
     power = models.CharField('Мощьность', max_length=100, null=True)
     milli = models.CharField("Пробег", max_length=100, null=True)
     price = models.CharField("Стоимость", max_length=100, null=True)
