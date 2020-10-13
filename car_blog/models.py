@@ -57,6 +57,7 @@ class Characteristics(models.Model):
     body_type = models.ForeignKey(Body_type, verbose_name="Тип кузова", on_delete=models.CASCADE, null=True)
     engine = models.ForeignKey(Engine, verbose_name="Тип двигателя", on_delete=models.CASCADE, null=True)
     power = models.CharField('Мощьность', max_length=100, null=True)
+    old = models.DateField("Год выпуска", null=True)
     milli = models.CharField("Пробег", max_length=100, null=True)
     price = models.CharField("Стоимость", max_length=100, null=True)
 
