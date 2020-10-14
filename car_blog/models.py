@@ -3,14 +3,14 @@ from django.db import models
 
 # Create your models here.
 class Transmission(models.Model):
-    name = models.CharField("Трансмиссия", max_length=200)
+    name = models.CharField("Коробка передач", max_length=200)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = "Трасмиссия"
-        verbose_name_plural = "Трансмисии"
+        verbose_name = "Коробка передач"
+        verbose_name_plural = "Коробки передачи"
 
 
 class Body_type(models.Model):
