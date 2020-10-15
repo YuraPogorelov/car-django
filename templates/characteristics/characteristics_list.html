@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for characteristics in characteristics_list %}
+    {{ characteristics.model }}
+    <img src="{{ characteristics.image.url }}" alt="" width="500px" height="300px">
+    {{ characteristics.color }}
+    {{ characteristics.transmission }}
+{% endfor %}
+</body>
+</html>
