@@ -63,7 +63,7 @@ class Model(models.Model):
 
 class Characteristics(models.Model):
     model = models.ForeignKey(Model, verbose_name='Модели', on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField("Фото", upload_to="image/", null=True)
+    image = models.ImageField("Фото", upload_to="image/", max_length=255, null=True)
     color = models.CharField("Цвет авто", max_length=200, null=True)
     transmission = models.ForeignKey(Transmission, verbose_name="Тип коробки передач", on_delete=models.CASCADE, null=True)
     body_type = models.ForeignKey(Body_type, verbose_name="Тип кузова", on_delete=models.CASCADE, null=True)
